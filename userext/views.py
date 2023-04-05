@@ -6,6 +6,7 @@ from django.contrib.auth import login,authenticate,logout
 def RegisterView(request):
     context={}
     if (request.POST):
+        
         form=RegisterForm(request.POST)
         if form.is_valid():
             form.save()
@@ -18,6 +19,7 @@ def RegisterView(request):
             context['registration_form']=form
     else:
         form=RegisterForm()
+        form.fields.pop('name')
         context['registration_form']=form
     return render(request,'register.html',context)
 
