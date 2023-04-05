@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from userext.views import RegisterView, tempview,LogOutView,LogInView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',tempview,name="temp"),
+    path('register/',RegisterView,name="register"),
+    path('logout/',LogOutView,name="logout"),
+    path('login/',LogInView,name="login")
 ]
