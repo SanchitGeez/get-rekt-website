@@ -19,5 +19,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('registration/', include('teamreg.urls'))
+    path('registration/', include('teamreg.urls')),
+    path('', tempview, name="temp"),
+    path('register/', RegisterView, name="register"),
+    path('logout/', LogOutView, name="logout"),
+    path('login/', LogInView, name="login")
 ]
